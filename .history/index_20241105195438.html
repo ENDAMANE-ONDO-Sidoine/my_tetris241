@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="tetris.js" async></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>TETRIS 241</title>
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Conteneur principal avec une image de fond -->
+    <div class="p-10 flex md:flex-row lg:flex-row justify-center gap-0 md:gap-10 bg-cover bg-center" style="background-image: url(https://qwasar.io/wp-content/uploads/2020/07/Elite-Software-Engineering-Program-8.png);">
+        <!-- Section du canvas du jeu Tetris -->
+        <div class="flex justify-center items-center">
+            <canvas id="tetris" width="200px" height="400px" class="border-gray-400 border-4 shadow"/>
+        </div>
+        
+        <!-- Section des informations du jeu -->
+        <div class="flex gap-5 justify-center">
+            <div class="bg-blue-50 px-5 py-2">
+                <!-- Titre du jeu avec logo -->
+                <h1 class="flex gap-2 uppercase text-3xl font-mono font-extrabold text-cyan-600 texte-center p-2 border-white border-2 shadow rounded">tetris 241 <span><img src="https://qwasar.io/wp-content/uploads/2020/07/Qwasar-Silicon-Valley-40.png" class="w-[35px] animate-spin" alt="logo"></span> </h1>
+                
+                <!-- Section pour annoncer la prochaine pièce Tetris -->
+                <div id="announceTetrimino" class=" my-4 p-2 shadow">
+                    <canvas id="nextTetrimino" class="bg-slate-800" width="250px" height="70px"></canvas>
+                    <p id="nextTetriminoText" class="text-cyan-600"></p>
+                </div>
+                
+                <!-- Section des statistiques du jeu -->
+                <div class="flex flex-col gap-4 uppercase font-mono font-extrabold text-cyan-600">
+                    <div><h2 class="flex gap-2 text-xl font-mono font-extrabold text-cyan-600 texte-center p-2 border-white border-2 shadow rounded">Statistics <span><img src="https://centre-alain-savary.ens-lyon.fr/CAS/documents/images/chart35773_960_720.png/image" class="w-[25px]" alt="icon_stat"></span></h2></div>
+                    <div><h3 id="niveau">Level: <span id="displayNiveau">0</span></h3></div>
+                    <div><h3 id="score">Score: <span id="displayScore">0</span></h3></div>
+                    <div><h3 id="temps">Time: <span id="displayTemps">0</span></h3></div>
+                    
+                    <!-- Boutons de contrôle du jeu -->
+                    <div class="flex items-center justify-between">
+                        <button id="start_pause" class="uppercase font-mono font-extrabold text-cyan-600 text-[12px] p-2 border-white border-2 shadow rounded-full flex gap-1">Start/Pause <img src="https://static-00.iconduck.com/assets.00/play-or-pause-button-emoji-256x256-bfq2bc68.png" alt="icon_start_pause" class="w-[20px] rounded-full"></button>
+                        <button id="restartButton" class="uppercase font-mono font-extrabold text-cyan-600 text-[12px] p-2 border-white border-2 shadow rounded-full flex gap-1">Restart <img src="https://thumbnail.imgbin.com/7/22/2/imgbin-skype-computer-icons-cybex-technology-pune-skype-eNkaxXkAZC0pnR1smUC9UG6vu_t.jpg" alt="icon_restart" class="w-[20px] rounded-full"></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Section des contrôles du jeu (visible sur les écrans larges) -->
+            <div class="hidden md:block bg-blue-50 px-5 py-2">
+                <div>
+                    <h2 class="flex gap-2 uppercase text-3xl font-mono font-extrabold text-cyan-600 texte-center p-2 border-white border-2 shadow rounded">controls <span><img src="https://cdn-icons-png.flaticon.com/512/4315/4315512.png" alt="icon_controls" class="w-[40px] animate-bounce custom-animation-duration" style="animation-duration: 4900ms;"></span></h2>
+                </div>
+                
+                <!-- Boutons de contrôle du jeu (flèches et rotation) -->
+                <div class="flex flex-col gap-5 uppercase font-mono font-extrabold text-cyan-600 p-2 border-white border-2 shadow rounded my-5">
+                    <button id="arrow-left" class="flex items-center gap-2"><span><img src="https://www.avospanneaux.com/107-large_default/fleche-gauche-a-vos-panneaux-signaletique-et-textiles.jpg" alt="icon_left" class="w-[30px] rounded-full animate-slide-left"></span>Left</button>
+                    <button id="arrow-right" class="flex items-center justify-end gap-2">Right <span><img src="https://www.avospanneaux.com/105-large_default/fleche-droite-a-vos-panneaux-signaletique-et-textiles.jpg" alt="icon_right" class="w-[30px] rounded-full"></span></button>
+                    <button id="rotate_piece" class="flex items-center p-16 animate-spin gap-2 justify-center rounded-full bg-cover bg-center" style="background-image: url(https://cdn-icons-png.flaticon.com/512/3513/3513718.png); animation-duration: 70000ms;">Rotate</button>
+                    <button id="arrow-down" class="flex flex-col items-center gap-2">Down <span><img src="https://www.4mepro.com/27077-thickbox_default/panneau-rond-suivre-la-fleche-en-bas.jpg" alt="icon_down" class="w-[30px] rounded-full"></span></button>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+    <!--Bas de page -->
+    <footer class=" text-center mt-auto bg-blue-100 text-slate-500 text-sm py-2 opacity-50">
+        <p> 
+            Copyright © 2023 #Tetris_241 #école_241_business
+        </p>
+    </footer>
+</body>
+</html>
