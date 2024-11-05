@@ -423,5 +423,3 @@ initArena();
 // Démarrer le jeu
 update();
 
-// Sélectionner l'élément avec l'id 'current-year' et y ajouter l'année actuelle
-document.getElementById("current-year").textContent = new Date().getFullYear();
